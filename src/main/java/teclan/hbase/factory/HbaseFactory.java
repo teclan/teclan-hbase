@@ -55,7 +55,7 @@ public class HbaseFactory {
 			for (int i = 0; i < keysAndValues.size(); i++) {
 
 				Map<String, Object> map = keysAndValues.get(i);
-				Put put = new Put(Bytes.toBytes(startRowKey++));
+				Put put = new Put(Bytes.toBytes(String.valueOf(startRowKey++)));
 
 				for (String key : map.keySet()) {
 					put.addColumn(Bytes.toBytes(family), Bytes.toBytes(key), Bytes.toBytes(map.get(key).toString()));
