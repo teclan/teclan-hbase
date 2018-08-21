@@ -36,6 +36,7 @@ public class HbaseFactory {
 	public static void deleteTable(Configuration configuration, String table) {
 		try {
 			HBaseAdmin admin = new HBaseAdmin(configuration);
+			admin.disableTable(table);
 			admin.deleteTable(table);
 		} catch (IOException e) {
 			LOGEER.error(e.getMessage(), e);

@@ -21,11 +21,21 @@ public class Main {
 
 		configuration = HbaseFactory.get(new String[] { "10.0.88.41", "10.0.88.42", "10.0.88.47" }, 2181);
 
+		dropClassTable();
+		dropStudentTable();
 		// createStudentTable();
 		// createClassTable();
 
-		addDataForClass();
+		// addDataForClass();
 
+	}
+
+	private static void dropClassTable() {
+		HbaseFactory.deleteTable(configuration, "class");
+	}
+
+	private static void dropStudentTable() {
+		HbaseFactory.deleteTable(configuration, "class");
 	}
 
 	private static void addDataForClass() {
